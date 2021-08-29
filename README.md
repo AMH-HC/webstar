@@ -3,4 +3,4 @@
 
 Easy
 
-https://github.com/AMH-HC/webstar
+git clone https://github.com/AMH-HC/webstar
