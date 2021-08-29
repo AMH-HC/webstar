@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 multi () {
 if [[ -e $2 && -e $3 ]];then                               while IFS= read -r sites ;do
-while ISF= read -r paths ;do
-url="$sites/$paths"
+while ISF= read -r cracks ;do
+url="$sites/$cracks"
 echo -e "\e[1;33mChecking -> $url\e[0m"
 echo -ne "\e[1;32mStatus :"
 status_code=$(curl -Iks -A "Chrom" -L $url | head -n 1 | awk '{ print $2 }')
@@ -15,14 +15,14 @@ echo -ne "\n"
 done <$3
 done <$2
 else
-echo -e "\e[1;33mPlease Run The Script As ./bruster.sh multi sites.txt dir.txt \e[0m"
+echo -e "\e[1;33mPlease Run The Script As ./webstar.sh multi sites.txt dir.txt \e[0m"
 fi
 }
 single () {
 echo -e "\e[1;32m[\e[1;35m$(date | awk '{print $4}')\e[1;32m]\e[1;35m Target Site : \e[1;31m$1\e[0m"
 if [[ $1 != "" && -e $2 ]];then
-while ISF= read -r paths ;do
-url="$1/$paths"
+while ISF= read -r cracks ;do
+url="$1/$cracks"
 echo -e "\e[1;33mChecking -> $url\e[0m"
 echo -ne "\e[1;32mStatus :"
 status_code=$(curl -Iks -A "Chrom" -L $url | head -n 1 | awk '{ print $2 }')
@@ -34,7 +34,7 @@ fi
 echo -ne "\n"
 done <$2
 else
-echo -e "\e[1;33mPlease Run The Script As ./bruster.sh example.com dir.txt\e[0m"
+echo -e "\e[1;33mPlease Run The Script As ./webstar.sh example.com dir.txt\e[0m"
 fi
 }
 start () {
@@ -44,7 +44,7 @@ else
 single $1 $2
 fi
 }
-echo -e "\e[1;31m
+echo -e "\e[1;32m
  _       _      _         _
 | |  _  | |    | |       | |
 | | / \ | |_ __| | __ ___| |_ ___ _ __
@@ -54,7 +54,7 @@ echo -e "\e[1;31m
           \e[1;32mBy HackCat
 \e[0m"
 if [[ $1 == "" && $2 == "" ]];then
-echo -e "\e[1;33mPlease Run The Script As ./bruster.sh example.com dir.txt (or) ./bruster.sh multi sites.txt dir.txt \e[0m"
+echo -e "\e[1;35mPlease Run The Script As ./webstar.sh example.com dir.txt (or) ./webstar.sh multi sites.txt dir.txt \e[0m"
 exit
 else
 start $1 $2 $3
